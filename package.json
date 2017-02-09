@@ -1,0 +1,24 @@
+{
+  "name": "livecoding-check-followers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Archakov06/livecoding-check-followers.git"
+  },
+  "author": "Archakov Dennis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Archakov06/livecoding-check-followers/issues"
+  },
+  "homepage": "https://github.com/Archakov06/livecoding-check-followers#readme",
+  "devDependencies": {
+    "socket.io": "^1.7.2",
+    "unirest": "^0.5.1",
+    "xml2js": "^0.4.17"
+  }
+}

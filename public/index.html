@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {
+		font-family: Tahoma;
+	}
+	.popup {
+		display: block;
+		width: 50%;
+		margin: 0 auto;
+	}
+	.popup h1 {
+		text-align: center;
+		color: #fff;
+	}
+	.popup h1 b {
+		color: #56bb56;
+	}
+	.popup img {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+
+<div style="display: none;" class="popup">
+	<img src="http://cdn.streamlabs.com/users/2813403/library/giphy.gif">
+	<audio src="http://uploads.twitchalerts.com/sound-defaults/positive-win-game-sound-5.ogg"></audio>
+	<h1>New follower <b></b></h1>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
+
+<script>
+
+	function showPopup(name){
+		$('.popup h1 > b').text(name);
+		$('.popup').fadeIn();
+		document.querySelector('audio').play();
+		setTimeout(function(){
+			$('.popup').fadeOut();
+		}, 5000);
+	}
+
+	var socket = io('http://localhost:8080');
+
+	socket.on('new_follower', function (data) {
+		$('.popup').fadeOut();
+		showPopup(data);
+	});
+
+</script>
+	
+</body>
+</html>
